@@ -1,0 +1,11 @@
+langchain==0.1.0
+langchain-openai==0.0.2
+langchain-community==0.0.10
+openai==1.7.2
+beautifulsoup4==4.12.3
+requests==2.31.0
+selenium==4.16.0
+webdriver-manager==4.0.1
+python-dotenv==1.0.0
+sqlalchemy==2.0.25
+pydantic==2.5.3

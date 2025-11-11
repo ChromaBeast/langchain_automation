@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  flutter-scraper:
+    build: .
+    container_name: flutter-jobs-scraper
+    env_file:
+      - .env
+    volumes:
+      - ./data:/data
+      - ./logs:/app/logs
+    environment:
+      - DATABASE_PATH=/data/jobs.db
+    restart: unless-stopped
+    # Uncomment to run on a schedule (requires crond in container)
+    # command: crond -f -d 8
