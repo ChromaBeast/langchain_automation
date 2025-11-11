@@ -32,7 +32,7 @@ if [ ! -f .env ]; then
     echo "Creating .env file from template..."
     cp .env.example .env
     echo ""
-    echo "⚠️  IMPORTANT: Edit .env file and add your OpenAI API key"
+    echo "⚠️  IMPORTANT: Edit .env file and add your Google Gemini API key"
     echo ""
 else
     echo ".env file already exists"

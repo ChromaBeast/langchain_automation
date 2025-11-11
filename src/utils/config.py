@@ -16,7 +16,7 @@ class Config:
         load_dotenv(env_file)
 
         # API Keys
-        self.openai_api_key = os.getenv('OPENAI_API_KEY')
+        self.google_api_key = os.getenv('GOOGLE_API_KEY')
 
         # Database
         self.database_path = os.getenv('DATABASE_PATH', './jobs.db')
@@ -40,8 +40,8 @@ class Config:
         """
         errors = []
 
-        if not self.openai_api_key:
-            errors.append("OPENAI_API_KEY is not set")
+        if not self.google_api_key:
+            errors.append("GOOGLE_API_KEY is not set")
 
         if self.min_salary_lpa <= 0:
             errors.append("MIN_SALARY_LPA must be positive")

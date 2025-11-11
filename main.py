@@ -60,9 +60,9 @@ def main():
     )
 
     # Initialize scraper
-    logger.info("Initializing LangChain job scraper...")
+    logger.info("Initializing LangChain job scraper with Gemini...")
     try:
-        scraper = LangChainJobScraper(api_key=config.openai_api_key)
+        scraper = LangChainJobScraper(api_key=config.google_api_key)
         logger.info("Scraper initialized successfully")
     except Exception as e:
         logger.error(f"Failed to initialize scraper: {str(e)}")

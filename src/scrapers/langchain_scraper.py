@@ -1,8 +1,7 @@
 from typing import List, Dict, Any, Optional
 import os
 from langchain.agents import AgentType, initialize_agent, Tool
-from langchain.llms import OpenAI
-from langchain_openai import ChatOpenAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 import requests
@@ -22,17 +21,18 @@ class LangChainJobScraper:
         Initialize the LangChain job scraper
 
         Args:
-            api_key: OpenAI API key (if not provided, reads from environment)
+            api_key: Google API key (if not provided, reads from environment)
         """
-        self.api_key = api_key or os.getenv('OPENAI_API_KEY')
+        self.api_key = api_key or os.getenv('GOOGLE_API_KEY')
         if not self.api_key:
-            raise ValueError("OpenAI API key is required. Set OPENAI_API_KEY environment variable.")
+            raise ValueError("Google API key is required. Set GOOGLE_API_KEY environment variable.")
 
-        # Initialize LLM
-        self.llm = ChatOpenAI(
+        # Initialize LLM with Gemini 2.5 Flash
+        self.llm = ChatGoogleGenerativeAI(
+            model="gemini-2.0-flash-exp",
+            google_api_key=self.api_key,
             temperature=0,
-            model_name="gpt-3.5-turbo",
-            openai_api_key=self.api_key
+            convert_system_message_to_human=True
         )
 
         # Initialize job filter

@@ -5,7 +5,7 @@ Get started with the Flutter Jobs Scraper in 5 minutes!
 ## 1. Prerequisites
 
 - Python 3.8+
-- OpenAI API key ([Get one here](https://platform.openai.com/api-keys))
+- Google Gemini API key - Free at [Google AI Studio](https://makersuite.google.com/app/apikey)
 
 ## 2. Installation
 
@@ -26,10 +26,10 @@ cp .env.example .env
 
 ## 3. Configuration
 
-Edit `.env` file and add your OpenAI API key:
+Edit `.env` file and add your Google Gemini API key:
 
 ```env
-OPENAI_API_KEY=your_key_here
+GOOGLE_API_KEY=your_key_here
 ```
 
 ## 4. Run

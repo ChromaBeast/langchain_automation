@@ -5,7 +5,7 @@ A LangChain-powered job scraper that automatically finds Flutter developer jobs 
 - **Salary > 12 LPA** (Lakhs Per Annum)
 - **Eligible for 2+ years experience**
 
-The scraper uses AI (via LangChain and OpenAI) to intelligently extract and analyze job postings, then stores matching jobs in a local SQLite database.
+The scraper uses AI (via LangChain and Google Gemini) to intelligently extract and analyze job postings, then stores matching jobs in a local SQLite database.
 
 ## Features
 
@@ -46,7 +46,7 @@ langchain_automation/
 ### Prerequisites
 
 - Python 3.8 or higher
-- OpenAI API key (for LangChain)
+- Google Gemini API key (for LangChain) - Get it free at https://makersuite.google.com/app/apikey
 
 ### Setup Steps
 
@@ -72,9 +72,9 @@ langchain_automation/
    cp .env.example .env
    ```
 
-5. **Edit `.env` file** and add your OpenAI API key:
+5. **Edit `.env` file** and add your Google Gemini API key:
    ```env
-   OPENAI_API_KEY=your_openai_api_key_here
+   GOOGLE_API_KEY=your_google_api_key_here
    ```
 
 ## Configuration
@@ -82,8 +82,8 @@ langchain_automation/
 Edit the `.env` file to customize the scraper:
 
 ```env
-# OpenAI API Key (required)
-OPENAI_API_KEY=your_openai_api_key_here
+# Google Gemini API Key (required) - Free at https://makersuite.google.com/app/apikey
+GOOGLE_API_KEY=your_google_api_key_here
 
 # Database
 DATABASE_PATH=./jobs.db
@@ -317,8 +317,8 @@ GROUP BY company;
 
 ## Troubleshooting
 
-### Issue: OpenAI API Error
-**Solution**: Ensure your OpenAI API key is set correctly in `.env` file and has sufficient credits.
+### Issue: Google Gemini API Error
+**Solution**: Ensure your Google Gemini API key is set correctly in `.env` file. Get a free key at https://makersuite.google.com/app/apikey
 
 ### Issue: No Jobs Found
 **Solution**:
@@ -338,7 +338,7 @@ GROUP BY company;
 2. **User Agents**: Rotate user agents for better success rates
 3. **Error Handling**: The scraper includes retry logic for failed requests
 4. **Database Backups**: Regularly backup `jobs.db`
-5. **API Costs**: Monitor OpenAI API usage to control costs
+5. **API Costs**: Gemini API offers generous free tier, monitor usage if needed
 
 ## Future Enhancements
 
@@ -367,7 +367,7 @@ For issues and questions:
 ## Acknowledgments
 
 - Built with [LangChain](https://langchain.com/)
-- Powered by [OpenAI](https://openai.com/)
+- Powered by [Google Gemini](https://deepmind.google/technologies/gemini/)
 - Database: [SQLAlchemy](https://www.sqlalchemy.org/)
 
 ---
